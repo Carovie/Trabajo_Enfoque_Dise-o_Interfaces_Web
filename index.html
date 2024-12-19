@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Enlace para incluir las librerias de Bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+    <!--Enlace para incluir mi hoja de estilos.css-->
+    <link rel="stylesheet" href="css/estilos.css">
+    <!--Enlace para incluir los iconos de la barra de navegación-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!--Enlaces para poder incluir la funcionalidad JavaScript del navbar-toggler (menú de hamburguesa que aparece al reducir las pantallas)-->
+    <script src="css/bootstrap/js/popper.min.js"></script>
+    <script src="css/bootstrap/js/bootstrap.min.js"></script>
+
+    <title>La Casa del Vinilo</title>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo_titulo">
+            <img src="img/logo.png" alt="Logo" class="logo">
+            <h1>LA CASA DEL VINILO</h1>
+            <img src="img/logo.png" alt="Logo" class="logo">
+        </div>
+
+        <!--navbar: Es una clase de Bootstrap para definir una barra de navegación.
+        navbar-expand-lg: Hace que la barra de navegación sea colapsable en tamaños pequeños (menor que "large", es decir, menos de 992px). En tamaños grandes o mayores, los elementos de la barra se expanden.
+        navbar-custom: Clase personalizada para estilos propios definidos en estilos.css-->
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+
+                <!--Botón que aparece solo en dispositivos pequeños y permite expandir o colapsar la barra de navegación. data-bs-toggle="collapse" y data-bs-target="#navbarContent": Permiten que el botón controle un elemento con el ID navbarContent (la sección que colapsa). aria-*: Atributos para mejorar la accesibilidad, informando a los lectores de pantalla qué hace el botón.-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <!--La clase navbar-toggler-icon es una clase proporcionada por Bootstrap que genera el ícono del botón de navegación (hamburguesa) en dispositivos pequeños. Este ícono es conocido como el menú hamburguesa (tres líneas horizontales). Aparece dentro del botón <button> que permite mostrar/ocultar el contenido colapsable del menú cuando la pantalla es pequeña. El <span> actúa como un contenedor para el ícono. La clase navbar-toggler-icon aplica estilos predefinidos en Bootstrap que: Dibujan las tres líneas horizontales (usando CSS). Ajustan el tamaño, color y espaciado de las líneas. En dispositivos pequeños, el resultado visual será un botón con el ícono de "hamburguesa": ☰. Al hacer clic en este botón, el contenido con el id="navbarContent" se expande o colapsa gracias a los atributos data-bs-toggle="collapse" y data-bs-target="#navbarContent".-->
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!--Este contenedor alberga el contenido que se mostrará o colapsará cuando el botón "Toggle" sea activado.-->
+                <div class="collapse navbar-collapse" id="navbarContent">
+
+                    <!--Clase de Bootstrap para estilizar texto dentro de la barra. me-auto: Utiliza margin-end:auto (Bootstrap 5), empujando el texto hacia la izquierda.-->
+                    <span class="navbar-text me-auto">
+                        Todos los discos de vinilo que te puedas imaginar, al mejor precio
+                    </span>
+
+                    <!--d-flex: Hace que el contenedor use el modelo de Flexbox. flex-column: En pantallas pequeñas, los elementos se apilan en columna. flex-lg-row: A partir del tamaño "large" (≥992px), los elementos se alinean en fila. ms-auto: (Margin Start Auto) empuja los elementos hacia la derecha. align-items-lg-center: Centra verticalmente los elementos cuando el tamaño es "large" o mayor. Cada <a> tiene la clase navbar-brand (de Bootstrap), que se utiliza para estilizar elementos dentro de una barra de navegación. my-2: Es una clase de Bootstrap que aplica margen vertical (m = margin, y = eje vertical, 2 = espaciado pequeño). my-lg-0: A partir del tamaño "large" (lg, ≥992px), el margen vertical se elimina (0). Iconos: <i class="fas fa-user"></i>: Icono de usuario. La etiqueta <i> se utiliza para definir iconos. class="fas fa-user": Hace referencia a un ícono de Font Awesome: fas: Significa "Font Awesome Solid" (estilo sólido de Font Awesome). fa-user: Es el ícono de un "usuario". Esto renderiza un ícono visual de usuario: <i class="fas fa-shopping-cart"></i>: Icono de carrito de compras. Estos iconos pertenecen a Font Awesome, una biblioteca de iconos.-->
+                    <div class="d-flex flex-column flex-lg-row ms-auto align-items-lg-center">
+                        <a class="navbar-brand my-2 my-lg-0" href="#"><i class="fas fa-user"></i> Mi Cuenta</a>
+                        <a class="navbar-brand my-2 my-lg-0" href="#"><i class="fas fa-shopping-cart"></i> Carrito</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <!--container es una clase básica de Bootstrap que define un contenedor con un ancho fijo y centrado en la página. Su principal propósito es proporcionar un espacio con márgenes automáticos a los lados, para que el contenido dentro de él no se extienda por todo el ancho de la pantalla y quede alineado de forma adecuada. mt-4: clase de Bootstrap que aplica un margen superior (margin-top) de tamaño 4 (1.5rem)-->
+        <div class="container mt-4">
+            <!--row mb-4: La clase row define una fila y mb-2 aplica un margen inferior a toda la fila. Esto asegura que las tarjetas dentro de esa fila tendrán espacio adicional por debajo.-->
+            <div class="row mb-2">
+                <!--col-12: En pantallas pequeñas, el contenedor ocupará el 100% del ancho disponible. col-sm-6: En pantallas de tamaño pequeño (≥576px), el contenedor ocupará la mitad del ancho (6 columnas de las 12 disponibles en el grid de Bootstrap). col-md-3: En pantallas medianas (≥768px), el contenedor ocupará 3 de las 12 columnas disponibles, es decir, un 25% del ancho. d-flex: Utiliza el sistema de Flexbox de Bootstrap, lo que facilita el diseño y alineación de los elementos dentro del contenedor. mb-4: Aplica un margen inferior (margin-bottom) de 1.5rem -->
+                <div class="col-12 col-sm-6 col-md-3 d-flex mb-4">
+                    <!--card: Clase de Bootstrap para crear tarjetas (elementos con bordes, sombras y contenido en su interior). h-100: Hace que la tarjeta ocupe el 100% de la altura del contenedor en el que se encuentra. m-3: margen de 1rem en todos los lados del elemento-->
+                    <div class="card h-100 m-3">
+                        <!--class="card-img-top": Aplica la clase de Bootstrap que coloca la imagen en la parte superior de la tarjeta.-->
+                        <a href="#" onclick="alert('Solo puedes comprar los discos que están en oferta')">
+                            <img src="img/discos/ACDC_HighVoltage.png" class="card-img-top" alt="ACDC_HighVoltage">
+                        </a>
+                        <!--card-body: Área dentro de la tarjeta donde se coloca el contenido. d-flex flex-column: Utiliza Flexbox para que los elementos dentro del cuerpo se alineen en una columna (verticalmente). justify-content-between: Distribuye los elementos dentro del contenedor de manera que haya espacio entre ellos, empujándolos a los extremos superior e inferior. align-items-center: esta clase se utiliza en un contenedor con display: flex para alinear los elementos de manera vertical al centro del contenedor. text-center: Esta clase se utiliza para centrar el texto dentro de un contenedor de forma horizontal-->
+                        <div
+                            class="card-body d-flex flex-column justify-content-between align-items-center text-center">
+                            <div>
+                                <!--card-title: Clase de Bootstrap que estiliza el título del producto. card-text: Clase de Bootstrap que estiliza el párrafo de texto para la descripción breve del producto.-->
+                                <h5 class="card-title">ACDC</h5>
+                                <p class="card-text">High Voltage</p>
+                            </div>
+
+                            <!--La clase correspondiente al popup que aparece con una descripción cuando pasamos el ratón por encima del card-body-->
+                            <div class="popup">High voltage es un álbum de la banda de hard rock australiana AC/DC y el
+                                primero a nivel internacional. Fue lanzado al mercado en mayo de 1976</div>
+
+                            <!--d-flex: Esta clase activa Flexbox en el contenedor, lo que permite que sus elementos hijos se alineen y distribuyan de forma flexible.En CSS, esto es equivalente a display: flex;. Hace que los elementos hijos de este contenedor se comporten como elementos flexibles, y puedes usar otras clases de Flexbox para controlar su alineación, distribución, etc. flex-column: Esta clase establece la dirección del eje principal a columna (vertical). Los elementos dentro del contenedor se organizarán en una columna, uno debajo del otro. En CSS, esto es equivalente a flex-direction: column; Si usas flex-column, los elementos hijos se apilarán verticalmente (en lugar de horizontalmente, que es el comportamiento predeterminado de Flexbox). align-items-center: alinea los elementos hijos en el eje transversal (en este caso, el eje horizontal). Alinea los elementos hijos al centro del contenedor de manera horizontal. En CSS, esto es equivalente a align-items: center; Funciona dentro de un contenedor Flexbox para centrar los elementos hijos a lo largo del eje horizontal. mt-3: Esta clase aplica un margen superior (margin-top) al contenedor. El 3 hace referencia a la escala de espaciado de Bootstrap (que va de 0 a 5, donde cada número corresponde a un valor de 0.25rem multiplicado por el número).En este caso, mt-3 aplica un margen superior de 1rem al contenedor. En CSS, esto es equivalente a margin-top: 1rem;-->
+                            <div class="d-flex flex-column align-items-center mt-3">
+                                <!--d-flex align-items-center: Utiliza Flexbox para alinear los elementos horizontalmente y centrarlos verticalmente.-->
+                                <b>19,99€</b>
+                                <div class="d-flex align-items-center">
+
+                                    <!--btn: es una clase estándar de Bootstrap que aplica los estilos básicos de un botón. btn-counter: clase personalizada. btn-sm: clase de Bootstrap hace que el botón tenga un tamaño pequeño. Es un modificador de tamaño que reduce el tamaño predeterminado del botón. me-1: clase de Bootstrap para aplicar un margen al lado derecho del botón, me significa "margin end" (margen al final, en este caso, a la derecha), y el 1 indica una unidad de espaciado, que es de 0.25rem.  style="width: 35px;": Define un ancho específico para el botón - -->
+                                    <button class="btn btn-counter btn-sm me-1" style="width: 35px;">-</button>
+                                    <!--form-control: clase de Bootstrap que aplica el estilo estándar de los campos de formulario. form-control-sm: clase de Bootstrap que hace que el campo de entrada tenga un tamaño pequeño. Cambia el alto del campo y lo hace más compacto. text-center: Centra el número que se muestra en el campo. p-0: Aplica padding de 0 a todos los lados del campo de entrada, eliminando cualquier espacio adicional entre el borde y el contenido del campo-->
+                                    <input type="number" class="form-control form-control-sm text-center p-0" value="1"
+                                        min="1" style="width: 35px; font-size: 0.9rem;" disabled>
+                                    <button class="btn btn-counter btn-sm ms-1" style="width: 35px;">+</button>
+                                </div>
+                                <!--btn es una clase de Bootstrap que aplica los estilos básicos de un botón. btn-sm es una clase de Bootstrap que hace que el botón sea de un tamaño pequeño. mt-1: margin-top de 0.25rem-->
+                                <button class="btn btn-sm mt-1">Añadir al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3 d-flex mb-4">
+                    <div class="card h-100 m-3">
+                        <a href="html/disco1.html">
+                            <img src="img/discos/GipsyPower_LaBandaSonoradelCineQuinqui_oferta.png" class="card-img-top"
+                                alt="GipsyPower_LaBandaSonoradelCineQuinqui">
+                        </a>
+                        <div
+                            class="card-body d-flex flex-column justify-content-between align-items-center text-center">
+                            <div>
+                                <h5 class="card-title">Gipsy Kings</h5>
+                                <p class="card-text">Gipsy Power</p>
+                            </div>
+
+                            <div class="popup">Gipsy Power es un recopilatorio que celebra la música que acompañó al
+                                movimiento cinematográfico más característico e influenciador de finales del Siglo XX en
+                                España</div>
+
+                            <div class="d-flex flex-column align-items-center mt-3">
+                                <b style="color: red;">¡¡OFERTA!!<br> 14,99€</b>
+                                <div class="d-flex align-items-center">
+                                    <button class="btn btn-counter btn-sm me-1" style="width: 35px;">-</button>
+                                    <input type="number" class="form-control form-control-sm text-center p-0" value="1"
+                                        min="1" style="width: 35px; font-size: 0.9rem;" disabled>
+                                    <button class="btn btn-counter btn-sm ms-1" style="width: 35px;">+</button>
+                                </div>
+
+                                <button class="btn btn-sm mt-1">Añadir al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3 d-flex mb-4">
+                    <div class="card h-100  m-3">
+                        <a href="#" onclick="alert('Solo puedes comprar los discos que están en oferta')">
+                            <img src="img/discos/BruceSpringsteen_BornintheUSA.png" class="card-img-top"
+                                alt="BruceSpringsteen_BornintheUSA">
+                        </a>
+                        <div
+                            class="card-body d-flex flex-column justify-content-between align-items-center text-center">
+                            <div>
+                                <h5 class="card-title">Bruce Springsteen</h5>
+                                <p class="card-text">Born in the U.S.A.</p>
+                            </div>
+
+                            <div class="popup">Born in the U.S.A. es el séptimo álbum de estudio del músico
+                                estadounidense Bruce Springsteen, publicado por la compañía discográfica Columbia
+                                Records en junio de 1984</div>
+
+                            <div class="d-flex flex-column align-items-center mt-3">
+                                <b><br> 17,99€</b>
+                                <div class="d-flex align-items-center">
+                                    <button class="btn btn-counter btn-sm me-1" style="width: 35px;">-</button>
+                                    <input type="number" class="form-control form-control-sm text-center p-0" value="1"
+                                        min="1" style="width: 35px; font-size: 0.9rem;" disabled>
+                                    <button class="btn btn-counter btn-sm ms-1" style="width: 35px;">+</button>
+                                </div>
+
+                                <button class="btn btn-sm mt-1">Añadir al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3 d-flex mb-4">
+                    <div class="card h-100  m-3">
+                        <a href="#" onclick="alert('Solo puedes comprar los discos que están en oferta')">
+                            <img src="img/discos/Fontaines_Romance.png" class="card-img-top" alt="Fontaines_Romance">
+                        </a>
+                        <div
+                            class="card-body d-flex flex-column justify-content-between align-items-center text-center">
+                            <div>
+                                <h5 class="card-title">Fontaines D.C.</h5>
+                                <p class="card-text">Romance</p>
+                            </div>
+
+                            <div class="popup">Album de estudio de la banda irlandesa procedente de Dublín Fontaines
+                                D.C. Lanzado el pasado 23 de Agosto de 2024 por el sello XL Recordings</div>
+
+                            <div class="d-flex flex-column align-items-center mt-3">
+                                <b><br> 11,99€</b>
+                                <div class="d-flex align-items-center">
+                                    <button class="btn btn-counter btn-sm me-1" style="width: 35px;">-</button>
+                                    <input type="number" class="form-control form-control-sm text-center p-0" value="1"
+                                        min="1" style="width: 35px; font-size: 0.9rem;" disabled>
+                                    <button class="btn btn-counter btn-sm ms-1" style="width: 35px;">+</button>
+                                </div>
+
+                                <button class="btn btn-sm mt-1">Añadir al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row mb-4">
+                <div class="col-12 col-sm-6 col-md-3 d-flex mb-4">
+                    <div class="card h-100  m-3">
+                        <a href="#" onclick="alert('Solo puedes comprar los discos que están en oferta')">
+                            <img src="img/discos/GunsnRoses_UseYourIlusion.png" class="card-img-top"
+                                alt="GunsnRoses_UseYourIlusion">
+                        </a>
+                        <div
+                            class="card-body d-flex flex-column justify-content-between align-items-center text-center">
+
+                            <div>
+                                <h5 class="card-title">Guns N' Roses</h5>
+                                <p class="card-text">Use Your Illusion</p>
+                            </div>
+
+                            <div class="popup">Use Your Illusion es el tercer álbum de estudio de la banda
+                                estadounidense de hard rock, Guns N' Roses, publicado el 17 de septiembre de 1991. Ha
+                                vendido alrededor de 17 millones de copias en todo el mundo</div>
+
+                            <div class="d-flex flex-column align-items-center mt-3">
+                                <b>15,99€</b>
+                                <div class="d-flex align-items-center">
+                                    <button class="btn btn-counter btn-sm me-1" style="width: 35px;">-</button>
+                                    <input type="number" class="form-control form-control-sm text-center p-0" value="1"
+                                        min="1" style="width: 35px; font-size: 0.9rem;" disabled>
+                                    <button class="btn btn-counter btn-sm ms-1" style="width: 35px;">+</button>
+                                </div>
+
+                                <button class="btn btn-sm mt-1">Añadir al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3 d-flex mb-4">
+                    <div class="card h-100  m-3">
+                        <a href="#" onclick="alert('Solo puedes comprar los discos que están en oferta')">
+                            <img src="img/discos/HeroesdelSilencia_ElEspirituDelVino.png" class="card-img-top"
+                                alt="HeroesdelSilencia_ElEspirituDelVino">
+                        </a>
+                        <div
+                            class="card-body d-flex flex-column justify-content-between align-items-center text-center">
+
+                            <div>
+                                <h5 class="card-title">Heroes del Silencio</h5>
+                                <p class="card-text">El espíritu del vino</p>
+                            </div>
+
+                            <div class="popup">El espíritu del vino es el título del tercer álbum de estudio del grupo
+                                español Héroes del Silencio. Se presentó simultáneamente para toda Europa en Berlín,
+                                Alemania, el 3 de junio de 1993</div>
+
+                            <div class="d-flex flex-column align-items-center mt-3">
+                                <b>14,99€</b>
+                                <div class="d-flex align-items-center">
+                                    <button class="btn btn-counter btn-sm me-1" style="width: 35px;">-</button>
+                                    <input type="number" class="form-control form-control-sm text-center p-0" value="1"
+                                        min="1" style="width: 35px; font-size: 0.9rem;" disabled>
+                                    <button class="btn btn-counter btn-sm ms-1" style="width: 35px;">+</button>
+                                </div>
+
+                                <button class="btn btn-sm mt-1">Añadir al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3 d-flex mb-4">
+                    <div class="card h-100 m-3">
+                        <a href="html/disco2.html">
+                            <img src="img/discos/PinkFloyd_AtomHeartMother_oferta.png" class="card-img-top"
+                                alt="PinkFloyd_AtomHeartMother">
+                        </a>
+                        <div
+                            class="card-body d-flex flex-column justify-content-between align-items-center text-center">
+                            <div>
+                                <h5 class="card-title">Pink Floyd</h5>
+                                <p class="card-text">Atom Heart Mother</p>
+                            </div>
+
+                            <div class="popup">Atom Heart Mother es el quinto álbum de estudio del grupo británico Pink
+                                Floyd. Fue lanzado el 2 de octubre de 1970</div>
+
+
+                            <div class="d-flex flex-column align-items-center mt-3">
+                                <b style="color: red;">¡¡OFERTA!!<br> 14,99€</b>
+                                <div class="d-flex align-items-center">
+                                    <button class="btn btn-counter btn-sm me-1" style="width: 35px;">-</button>
+                                    <input type="number" class="form-control form-control-sm text-center p-0" value="1"
+                                        min="1" style="width: 35px; font-size: 0.9rem;" disabled>
+                                    <button class="btn btn-counter btn-sm ms-1" style="width: 35px;">+</button>
+                                </div>
+
+                                <button class="btn btn-sm mt-1">Añadir al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3 d-flex mb-4">
+                    <div class="card h-100  m-3">
+                        <a href="#" onclick="alert('Solo puedes comprar los discos que están en oferta')">
+                            <img src="img/discos/TheAffected_Fate.png" class="card-img-top" alt="TheAffected_Fate">
+                        </a>
+                        <div
+                            class="card-body d-flex flex-column justify-content-between align-items-center text-center">
+
+                            <div>
+                                <h5 class="card-title">The Affected</h5>
+                                <p class="card-text">Fate</p>
+                            </div>
+
+                            <div class="popup">«Fate» es el título de la recopilación publicada por el grupo australiano
+                                de punk y rock alternativo The Affected. Lanzado en 1994, contiene 13 canciones</div>
+
+                            <div class="d-flex flex-column align-items-center mt-3">
+                                <b>18,99€</b>
+                                <div class="d-flex align-items-center">
+                                    <button class="btn btn-counter btn-sm me-1" style="width: 35px;">-</button>
+                                    <input type="number" class="form-control form-control-sm text-center p-0" value="1"
+                                        min="1" style="width: 35px; font-size: 0.9rem;" disabled>
+                                    <button class="btn btn-counter btn-sm ms-1" style="width: 35px;">+</button>
+                                </div>
+
+                                <button class="btn btn-sm mt-1">Añadir al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="pie">
+            <div>
+                <h4 id="tambien">También puedes visitarnos en:</h4>
+
+                <a href=# target="_blank"> <img src="img/youtube.png" alt="Youtube" width="100" height="30"></a>
+                <a href=# target="_blank"> <img src="img/instagram.png" alt="Instagram" width="100" height="30"></a>
+                <a href=# target="_blank"> <img src="img/telegram.png" alt="Telegram" width="100" height="30"></a>
+            </div>
+            <div>
+                <h4 class="contacto"><a href=#>Contacta con nosotros</a></h4>
+                <h4 class="contacto">Avisos legales</h4>
+                <a href="https://www.interior.gob.es/opencms/es/politica-de-cookies/" id="politica">Política de
+                    cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /*Este evento asegura que el código dentro de la función solo se ejecute después de que todo el contenido HTML de la página haya sido completamente cargado (es decir, cuando el DOM esté listo). Esto es útil para asegurarse de que los elementos con los que queremos interactuar estén disponibles antes de que el script intente manipularlos.*/
+        document.addEventListener("DOMContentLoaded", function () {
+            /*selecciona todos los elementos de la página que tengan la clase card-body y los guarda en la constante cardBodies como una NodeList (una lista de nodos).*/
+            const cardBodies = document.querySelectorAll(".card-body");
+
+            /*se recorre cada elemento card-body en la lista cardBodies. Para cada cardBody, se ejecuta la función dentro de forEach().*/
+            cardBodies.forEach((cardBody) => {
+                /*Dentro de cada iteración, se busca el elemento hijo con la clase popup dentro de cada card-body y se guarda en la constante popup. Esto significa que, por cada card-body, se está seleccionando su popup asociado.*/
+                const popup = cardBody.querySelector(".popup");
+                let popupTimeout;  // Variable para almacenar el timeout
+
+                // Mostrar el popup al pasar el ratón
+                cardBody.addEventListener("mouseenter", () => {
+                    popup.style.display = "block"; //Mostrar el popup
+
+
+                    // Ocultar el popup después de 3 segundos (3000 milisegundos)
+                    popupTimeout = setTimeout(() => {
+                        popup.style.display = "none";  // Ocultar el popup
+                    }, 3000);
+                });
+
+                // Ocultar el popup al salir del área con el ratón
+                cardBody.addEventListener("mouseleave", () => {
+                    popup.style.display = "none";
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

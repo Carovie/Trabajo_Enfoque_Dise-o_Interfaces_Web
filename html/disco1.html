@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <title>La Casa del Vinilo</title>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo_titulo">
+            <img src="../img/logo.png" alt="Logo" class="logo">
+            <h1>LA CASA DEL VINILO</h1>
+            <img src="../img/logo.png" alt="Logo" class="logo">
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+
+                    <span class="navbar-text me-auto">
+                        Todos los discos de vinilo que te puedas imaginar, al mejor precio
+                    </span>
+
+                    <div class="d-flex flex-column flex-lg-row ms-auto align-items-lg-center">
+                        <a class="navbar-brand my-2 my-lg-0" href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+                        <a class="navbar-brand my-2 my-lg-0" href="#"><i class="fas fa-user"></i> Mi Cuenta</a>
+                        <a class="navbar-brand my-2 my-lg-0" href="#"><i class="fas fa-shopping-cart"></i> Carrito</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <div class="container mt-4">
+            <div class="row mb-4">
+
+                <!--col-md-6: En pantallas medianas (y más grandes), esta columna ocupará 6 de las 12 unidades de la cuadrícula (50% del ancho). col-12: En pantallas más pequeñas (por debajo del punto de ruptura "mediano"), la columna ocupará el 100% del ancho del contenedor. p-3: Añade un relleno de 3 unidades en todos los lados de la columna. d-flex: Convierte el contenedor en un flexbox, habilitando un comportamiento de disposición flexible. flex-column: Organiza el contenido dentro del flexbox de forma vertical (en columna). align-items-center: Centra el contenido horizontalmente dentro de la columna (según el alineamiento de flexbox). Esta estructura es comúnmente utilizada para centrar el contenido en un diseño responsivo, donde el contenido se organiza de forma vertical y se adapta a diferentes tamaños de pantalla.-->
+                <div class="col-md-6 col-12 p-3 d-flex flex-column align-items-center">
+                    <!--La clase img-fluid de Bootstrap se utiliza para hacer que las imágenes sean responsivas. Esto significa que la imagen se ajustará automáticamente al ancho del contenedor en el que se encuentre, manteniendo sus proporciones. La clase realiza lo siguiente: max-width: 100%: La imagen nunca excederá el 100% del ancho de su contenedor.
+                    height: auto: La altura de la imagen se ajusta automáticamente para mantener la relación de aspecto original. Esto es útil cuando deseas que las imágenes se adapten a diferentes tamaños de pantalla sin distorsionarse.-->
+                    <img src="../img/discos/GipsyPower_LaBandaSonoradelCineQuinqui.png"
+                        alt="GipsyPower_LaBandaSonoradelCineQuinqui" class="img-fluid">
+                    <!--La clase btn btn-lg mt-4 se usa en un botón en Bootstrap para aplicar estilos específicos: btn: Aplica los estilos básicos para un botón de Bootstrap. Esto incluye propiedades como bordes redondeados, un fondo de color y efectos de hover. btn-lg: Hace que el botón sea más grande que el tamaño por defecto. Aumenta el tamaño del texto, los bordes y el padding dentro del botón, haciendo que sea más visible y fácil de interactuar.
+                    mt-4: margin-top de 1.5 rem-->
+                    <button class="btn btn-lg mt-4">Añadir al Carrito</button>
+                </div>
+
+
+                <div class="col-md-6 col-12 p-3">
+                    <h2 class="text-center" style="color: white;">Gipsy Kings - Gipsy Power</h2>
+                    <p class="text-center fs-4" style="color: red;"><b>¡¡OFERTA!! 14.99€</b></p>
+                    <p class="text-center" style="color: white">
+                        Edición en doble vinilo con carpeta desplegable de «Gipsy Power», la banda sonora de cine
+                        quinqui. Un completo recopilatorio con una cuidada selección de aquellas canciones emblemáticas
+                        de Las Grecas, Los Chunguitos, Los Chichos o Los Chorbos, entre otros, que acompañaron al mayor
+                        movimiento cinematográfico en España de finales del siglo pasado, y cuya estética ha vuelto a
+                        resurgir actualizada y con más fuerza que nunca en los últimos años. Este proyecto, impulsado
+                        por David el Indio de Vetusta Morla y con textos de José Manuel Gómez Gufi, pone en valor los
+                        grandes hits, pero también algunos fracasos y joyas ocultas de aquella época que van del rock,
+                        al funk pasando por la música disco y la rumba, y que configuran todos ellos un retrato
+                        fundamental de la historia de nuestro país y de la calidad, potencia y autenticidad musical de
+                        estos artista. Una elegantísima selección musical para paladares exigentes. Publicado por Legacy
+                        Records/Sony Music en 2022.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="row mb-4">
+
+                <div class="col-md-6 p-3">
+                    <!--list-group: Esta clase de Bootstrap aplica los estilos de una lista de grupos, lo que da como resultado una lista de elementos de bloque con bordes y un fondo de color, generalmente utilizada para mostrar elementos de manera ordenada y con separación visual. Cada elemento de la lista (si se usa li dentro de <ul>) tendrá un estilo particular, como bordes y espaciado. style="width: auto; max-width: 60%; margin: 0 auto;": width: auto;: La anchura de la lista se ajusta automáticamente según el contenido, pero se verá limitada por el valor de max-width. max-width: 60%;: La lista tendrá un ancho máximo del 60% del contenedor en el que se encuentra. Esto permite que se ajuste a tamaños más pequeños, pero nunca excederá ese porcentaje del ancho del contenedor. margin: 0 auto;: Centra la lista horizontalmente dentro de su contenedor. El 0 se aplica al margen superior e inferior (sin margen), mientras que auto hace que los márgenes izquierdo y derecho se ajusten automáticamente para centrar la lista.
+                    list-group-item: Esta clase de Bootstrap aplica un estilo específico a cada elemento de la lista.-->
+                    <ul class="list-group" style="width: auto; max-width: 60%; margin: 0 auto;">
+                        <li class="list-group-item" style="text-align: center; font-weight: bold;"><b>TRACKLIST</b></li>
+                        <li class="list-group-item">1. Los Chichos - La Historia de Juan Castillo</li>
+                        <li class="list-group-item">2. Las Grecas - Achilipú</li>
+                        <li class="list-group-item">3. Los Chorbos - Vuelvo A Casa</li>
+                        <li class="list-group-item">4. Chango - Aleluya</li>
+                        <li class="list-group-item">5. Los Chunguitos - Soy Un Perro Callejero</li>
+                        <li class="list-group-item">6. Lole Y Manuel - Tu Mirá</li>
+                        <li class="list-group-item">7. Remedios Amaya - Quién Maneja Mi Barca</li>
+                        <li class="list-group-item">8. Amina - Alí Mustafá</li>
+                        <li class="list-group-item">9. La Marelu - Mala</li>
+                        <li class="list-group-item">10. Los Amaya - Chica Bonita</li>
+                        <li class="list-group-item">11. Laberinto - Salud Y Libertad</li>
+                    </ul>
+                </div>
+
+
+                <div class="col-md-6 p-3">
+
+                    <!--embed-responsive: clase de Bootstrap se utiliza para incrustar medios de manera responsiva. embed-responsive-16by9 asegura que el video mantenga una relación de aspecto de 16:9, lo que es común para los videos, el video mantiene la relación de aspecto de 16:9 sin distorsionarse. Esta clase se aplica al <video> para hacerlo responsive dentro del contenedor.
+                    w-100: Esto asegura que el video ocupe el 100% del ancho del contenedor, el 100% del ancho disponible adaptándose a diferentes tamaños de pantalla.-->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video controls class="embed-responsive-item w-100" poster="../img/gipsy_poster.png">
+                            <source src="../video/Gipsy Kings.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                        <h3 class="text-center" style="color: white;">Gipsy Kings - Volare</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="pie">
+            <div>
+                <h4 id="tambien">También puedes visitarnos en:</h4>
+
+                <a href=# target="_blank"> <img src="../img/youtube.png" alt="Youtube" width="100" height="30"></a>
+                <a href=# target="_blank"> <img src="../img/instagram.png" alt="Instagram" width="100" height="30"></a>
+                <a href=# target="_blank"> <img src="../img/telegram.png" alt="Telegram" width="100" height="30"></a>
+            </div>
+            <div>
+                <h4 class="contacto"><a href=#>Contacta con nosotros</a></h4>
+                <h4 class="contacto">Avisos legales</h4>
+                <a href="https://www.interior.gob.es/opencms/es/politica-de-cookies/" id="politica">Política de
+                    cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

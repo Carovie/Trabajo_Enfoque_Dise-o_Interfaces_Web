@@ -1,0 +1,229 @@
+body {
+
+    background: rgb(88, 85, 85);
+    font-family: 'Roboto', 'Playfair Display', sans-serif;
+
+}
+
+/*La capa superior completa de la cabecera (iconos de los discos + titulo LA CASA DEL VINILO)*/
+.logo_titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: double #472c2c 0.35rem;
+    background: linear-gradient(to right, #000000, rgb(211, 119, 33), black);
+}
+
+/*Los iconos de los discos*/
+.logo {
+    max-width: 100px;
+    height: auto;
+}
+
+/*El titulo LA CASA DEL VINILO*/
+h1 {
+    color: white;
+    font-size: 4rem;
+    font-family: 'Open Sans';
+    background: linear-gradient(to right, #000000, rgb(211, 119, 33), black);
+    flex-grow: 1;
+    text-align: center;
+}
+
+/*La barra de navegación completa*/
+.navbar-custom {
+    background: black;
+    border: solid white;
+}
+
+/*Los iconos del usuario y el carrito, con su texto*/
+.navbar-custom a {
+    color: white;
+    font-weight: bold;
+    margin-left: 0.4rem;
+}
+
+/*Los iconos del usuario y el carrito, con su texto, cuando se les pasa el ratón por encima*/
+.navbar-custom a:hover {
+    color: rgb(230, 147, 24);
+}
+
+/*Los iconos del usuario y el carrito, con su texto, cuando tienen el foco (se hace click sobre ellos) o se ponen activos (se produce cuando un elemento está siendo presionado o activado, lo cual sucede mientras el click está siendo realizado, antes de soltar el botón del ratón). Si no hago esto, al hacer click sobre los iconos, se quedan en negro hasta que se hace click en otro sitio (pierden el foco, dejan de estar activados). Debe ser causado por algo que tiene Bootstrap que provoca que cuando se pulse uno de estos elementos, cambien a negro */
+.navbar-custom a:focus,
+.navbar-custom a:active {
+    color: white;
+}
+
+/*Los iconos del usuario y el carrito, con su texto. La combinación :not(:active):hover significa que el estilo se aplicará solo cuando el enlace esté siendo hoverizado (cuando el ratón pasa sobre él) y no esté activo (no haya sido clickeado). El estilo de la regla solo se aplica cuando el ratón está sobre el enlace (hover), pero no se aplica si el enlace ha sido clickeado (cuando tiene la clase :active).
+Esta instrucción es útil si quieres tener un comportamiento diferente para el enlace cuando está en estado "activo" (tras un clic) y cuando solo se pasa el ratón por encima. Si no hago esto, tras hacer click en el icono, éste quedaba blanco pero no funcionaba lo del hover hasta que no hacia click en otro sitio, asi que es una solución para que el hover funcione después de hacer clic: */
+.navbar-custom a:not(:active):hover {
+    color: rgb(230, 147, 24);
+}
+
+/*El texto de la barra de navegación: Todos los discos de vinilo que*/
+.navbar-text {
+    color: rgb(230, 147, 24);
+    font-size: 1.5rem;
+}
+
+/*El menú de hamburguesa que aparece en la barra de nagevación cuando se reduce la pantalla*/
+.navbar-toggler {
+    background-color: white;
+}
+
+/*Los botones de Añadir al Carrito de cada uno de los discos*/
+.btn {
+    background-color: rgb(211, 119, 33);
+    border-color: rgb(211, 119, 33);
+    color: white;
+}
+
+/*Los botones de Añadir al Carrito de cada uno de los discos cuando se les pasa el ratón por encima*/
+.btn:hover {
+    background-color: black;
+    color: white;
+}
+
+/*Los botones de - y + de cada uno de los discos*/
+.btn-counter {
+    background-color: #7e7974;
+    color: white;
+    border-color: #ccc8c3;
+}
+
+/*Los botones de - y + de cada uno de los discos cuando se les pasa el ratón por encima*/
+.btn-counter:hover {
+    background-color: rgb(211, 119, 33);
+    border-color: #ec971f;
+}
+
+/* Ajustes para la tarjeta */
+.card {
+    display: flex;
+    /*Esta propiedad convierte el contenedor en un contenedor flex. Un contenedor con display: flex le da acceso a las propiedades de Flexbox a los elementos hijos, permitiendo alinearlos de manera flexible y responsive. Los elementos hijos de este contenedor se convierten en elementos flexibles, es decir, se ajustan según las reglas definidas por otras propiedades de Flexbox.*/
+    flex-direction: column;
+    /*Define la dirección en la que se distribuyen los elementos dentro del contenedor flex. column significa que los elementos hijos se apilarán verticalmente, es decir, se colocarán uno debajo del otro. Si estuviera configurado como row (que es el valor predeterminado), los elementos se organizarían en una fila horizontal.
+    */
+    height: 100%;
+    /* Establece que la altura del contenedor será el 100% de la altura disponible en el elemento contenedor principal. Esto hace que el contenedor ocupe todo el espacio vertical disponible. */
+}
+
+/*Las imagenes de los discos*/
+.card-img-top {
+    transition: transform 0.3s ease;
+    /* Suaviza el efecto de ampliarlas al pasarles el ratón por encima*/
+    z-index: 1;
+    /* Coloca la imagen debajo del card-body por defecto*/
+    position: relative;
+    /* Necesario para que el z-index funcione correctamente*/
+    width: 100%;
+    /* Asegura que la imagen ocupe todo el ancho */
+    height: auto;
+    /* Esta propiedad ajusta la altura de la imagen en función de su ancho, manteniendo la proporción original de la imagen.n */
+    object-fit: cover;
+    /* Controla cómo la imagen se ajusta dentro de su contenedor, especialmente cuando la relación de aspecto de la imagen no coincide con la del contenedor. Efecto: cover asegura que la imagen cubra completamente el área del contenedor, incluso si parte de la imagen se recorta. Esto puede hacer que la imagen se amplíe o recorte para cubrir el contenedor sin distorsionarse */
+    object-position: center center;
+    /*Especifica la posición de la imagen dentro de su contenedor cuando se utiliza object-fit. Se usa para alinear la imagen en el contenedor, especialmente cuando la imagen es recortada. Efecto: center center centra la imagen tanto en el eje horizontal como en el vertical del contenedor. Si la imagen se recorta, se asegura de que el recorte sea simétrico, centrado en la imagen.*/
+    flex-grow: 2;
+    /*Controla cómo un elemento dentro de un contenedor flex crece para ocupar el espacio disponible. El valor de flex-grow es un número que define la proporción del espacio disponible que el elemento debería ocupar, en relación con otros elementos en el mismo contenedor. Efecto: flex-grow: 2; significa que el elemento puede crecer para ocupar el doble del espacio disponible en comparación con los otros elementos que tienen flex-grow en 1. Si otro elemento tiene flex-grow: 1;, este elemento ocupará el doble de espacio.*/
+}
+
+/*Las imagenes de los discos, al pasarles el ratón por encima*/
+.card-img-top:hover {
+    transform: scale(1.1);
+    /* Amplía la imagen un 10% */
+    z-index: 10;
+    /* Asegura que la imagen esté por encima del card-body durante el hover */
+}
+
+/*La parte de los anuncios que no es la imagen de los discos, esto es, donde se incluyen los textos con el nombre del grupo y del disco, el precio, el botón de Añadir al Carrito y los botones de + y - y el input de texto*/
+.card-body {
+    background-color: rgb(211, 195, 195);
+    position: relative;
+    z-index: 5;
+    display: flex;
+    /*convierte al contenedor en un contenedor flexbox.*/
+    flex-direction: column;
+    /* alinea los elementos hijos en una columna, uno debajo del otro.*/
+    justify-content: center;
+    /*alinea los elementos hijos verticalmente en el centro del contenedor.*/
+    flex-grow: 1;
+    /* Permite que el card-body crezca y ocupe el espacio restante disponible */
+    min-height: 50px;
+    /* Altura mínima para evitar que el contenido se aplaste */
+    box-sizing: border-box;
+    /* Asegura que el padding no cause desbordamiento. Hace que el padding y los bordes no afecten el tamaño total del elemento. */
+}
+
+/*El texto del nombre del grupo*/
+.card-title {
+    font-size: 1.3rem;
+    color: black;
+    font-weight: bold;
+}
+
+/*El texto del nombre del disco*/
+.card-text {
+    font-size: 1.2rem;
+    color: black;
+}
+
+/* El popup que se muestra con información adicional del disco cuando se pasa el ratón por el card-body */
+.popup {
+    position: absolute;
+    background-color: rgb(221, 193, 140);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: none;
+    /*Oculto inicialmente*/
+    z-index: 15;
+    /*Asegura que el popup esté encima de la imagen*/
+    top: 20px;
+    left: 0px;
+}
+
+.list-group-item {
+    background-color: rgb(211, 195, 195);
+  }
+
+/*El pie de página al completo*/
+.pie {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /*sta propiedad establece el tamaño de las columnas de una cuadrícula (grid). Al definir grid-template-columns, le dices al navegador cómo dividir el espacio disponible dentro del contenedor en columnas. 1fr es una unidad de medida en CSS Grid que significa "una fracción del espacio disponible". Es decir, se utiliza para distribuir el espacio disponible dentro del contenedor de manera proporcional entre las columnas. 1fr 1fr crea dos columnas de tamaño igual, que ocupan la mitad del espacio disponible cada una.*/
+    justify-content: center;
+    text-align: center;
+    background-color: #373A3C;
+    bottom: 0;
+    width: 100%;
+}
+
+/*Los textos del pie de pagina salvo el de Politica de Cookies*/
+footer h4 {
+    color: white;
+}
+
+/*El texto de Tambien puedes visitarnos en: y los tres iconos de las redes sociales*/
+#tambien {
+    padding-top: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/*Los elementos de Contacta con nosotros y Avisos legales*/
+.contacto {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+/*El texto/enlace de Contacta con nosotros*/
+.contacto a {
+    color: #80c6db
+}
+
+/*El texto de Politica de Cookies*/
+#politica {
+    color: rgb(241, 21, 157);
+    position: relative;
+    top: -0.5rem;
+}
